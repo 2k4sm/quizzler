@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    background-color: #cfe7f3;
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.home-text {
+    font-size: xx-large;
+    font-weight: bolder;
+    color: #1ea5b4;
+}
+
+.start-game-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3vh;
+    width: 7vw;
+    margin: 15px;
+    border: 1px solid rgb(71, 134, 230);
+    border-radius: 3px;
+    background-color: aliceblue;
+    text-decoration: none;
+}
