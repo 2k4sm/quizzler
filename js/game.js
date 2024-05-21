@@ -67,6 +67,8 @@ function choiceSelection() {
                 currentIndex++;
                 if (currentIndex < questions.length) {
                     displayQuestion();
+                } else {
+                    window.location.href = "./score.html";
                 }
             }, 500);
         });
@@ -81,6 +83,7 @@ function changeCorrectAndScore() {
     numerator.innerText = correct;
     denominator.innerText = questions.length;
     score.innerText = correct * 10;
+    localStorage.setItem('score', correct * 10);
 }
 
 
@@ -100,6 +103,8 @@ function startProgressBar() {
             currentIndex++;
             if (currentIndex < questions.length) {
                 displayQuestion();
+            } else {
+                window.location.href = "./score.html";
             }
         }
     }, 1);
