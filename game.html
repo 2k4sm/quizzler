@@ -10,27 +10,48 @@
 
 <body>
     <div class="home-container">
-        <p class="curr-question">What is the answer to this question?</p>
+
+        <div class="head-section">
+            <div class="corr-cont">
+                <p class="corr-text">Correct:</p>
+                <div class="fraction">
+                    <span class="correct-ans home-text"></span>
+                    <span class="home-text">/</span>
+                    <span class="total-qns home-text"></span>
+                </div>
+            </div>
+            <div class="score">
+                <p class="score-text corr-text">Score:</p>
+                <span class="score-info home-text"></span>
+            </div>
+
+        </div>
+
+        <div class="time-container">
+            <div class="time-bar" id="time-bar"></div>
+        </div>
+        <p class="curr-question"></p>
 
         <div class="choices-list">
-            <div class="choices choice-1">
+            <div class="choices">
                 <p class="option">A</p>
-                <p class="choice">Choice 1</p>
+                <p id="1" class="choice"></p>
             </div>
-            <div class="choices choice-2">
+            <div class="choices">
                 <p class="option">B</p>
-                <p class="choice">Choice 2</p>
+                <p id="2" class="choice"></p>
             </div>
-            <div class="choices choice-3">
+            <div class="choices">
                 <p class="option">C</p>
-                <p class="choice">Choice 3</p>
+                <p id="3" class="choice"></p>
             </div>
-            <div class="choices choice-4">
+            <div class="choices">
                 <p class="option">D</p>
-                <p class="choice">Choice 4</p>
+                <p id="4" class="choice"></p>
             </div>
         </div>
     </div>
 </body>
+<script src="./js/game.js"></script>
 
 </html>

@@ -48,7 +48,8 @@ body {
     display: flex;
 }
 
-.choices:hover, .start-game-btn:hover{
+.choices:hover,
+.start-game-btn:hover {
     background-color: #65cfdb;
     box-shadow: 1px 2px 10px 5px #65cfdb;
     border-radius: 3px;
@@ -79,4 +80,52 @@ body {
     border-radius: 3px;
     background-color: rgb(253, 254, 255);
     overflow-wrap: break-word;
+}
+
+.correct {
+    background-color: green;
+}
+
+.wrong {
+    background-color: red;
+}
+
+.time-container {
+    width: 50%;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.time-bar {
+    height: 20px;
+    width: 0%;
+    background-color: #4caf50;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+}
+
+.corr-text{
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    font-size: xx-large;
+    font-weight: bolder;
+    color: black;
+}
+
+.head-section{
+    min-height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.score, .corr-cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
