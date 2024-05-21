@@ -105,6 +105,7 @@ let questions = [
     }
 ];
 
+let flag = false;
 let currentIndex = 0;
 let correct = 0;
 
@@ -139,6 +140,10 @@ function choiceSelection() {
         clearInterval(progressInterval);
         let choiceChildren = choice.querySelector('p[id]')
         choice.addEventListener('click', function () {
+            if (flag) {
+                return;
+            }
+            flag = true;
             if (choiceChildren.id.toString().trim() === questions[currentIndex].answer.trim()) {
                 correct++;
                 changeCorrectAndScore();
@@ -146,10 +151,10 @@ function choiceSelection() {
             } else {
                 choiceChildren.classList.add('wrong');
             }
-
             setTimeout(() => {
                 clearInterval(progressInterval);
                 choiceChildren.classList.remove('correct', 'wrong');
+                flag = false;
                 currentIndex++;
                 if (currentIndex < questions.length) {
                     displayQuestion();
