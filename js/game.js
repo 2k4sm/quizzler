@@ -23,6 +23,86 @@ let questions = [
         choice4: '<! Comment>',
         answer: '2',
     },
+    {
+        question: 'What does CSS stand for?',
+        choice1: 'Creative Style Sheets',
+        choice2: 'Colorful Style Sheets',
+        choice3: 'Cascading Style Sheets',
+        choice4: 'Computer Style Sheets',
+        answer: '3',
+    },
+    {
+        question: 'Which HTML attribute is used to define inline styles?',
+        choice1: 'class',
+        choice2: 'font',
+        choice3: 'styles',
+        choice4: 'style',
+        answer: '4',
+    },
+    {
+        question: 'How do you insert a comment in a CSS file?',
+        choice1: '// this is a comment',
+        choice2: '/* this is a comment */',
+        choice3: '// this is a comment //',
+        choice4: '<!-- this is a comment -->',
+        answer: '2',
+    },
+    {
+        question: 'Which property is used to change the background color?',
+        choice1: 'bgcolor',
+        choice2: 'color',
+        choice3: 'background-color',
+        choice4: 'bg-color',
+        answer: '3',
+    },
+    {
+        question: 'How do you add a background color for all <h1> elements?',
+        choice1: 'h1 {background-color:#FFFFFF;}',
+        choice2: 'h1.all {background-color:#FFFFFF;}',
+        choice3: 'all.h1 {background-color:#FFFFFF;}',
+        choice4: 'h1 {bgcolor:#FFFFFF;}',
+        answer: '1',
+    },
+    {
+        question: 'Which CSS property controls the text size?',
+        choice1: 'font-style',
+        choice2: 'text-size',
+        choice3: 'font-size',
+        choice4: 'text-style',
+        answer: '3',
+    },
+    {
+        question: 'How do you display hyperlinks without an underline?',
+        choice1: 'a {text-decoration:none;}',
+        choice2: 'a {underline:none;}',
+        choice3: 'a {text-decoration:no-underline;}',
+        choice4: 'a {decoration:none;}',
+        answer: '1',
+    },
+    {
+        question: 'Which HTML attribute specifies an alternate text for an image, if the image cannot be displayed?',
+        choice1: 'src',
+        choice2: 'title',
+        choice3: 'alt',
+        choice4: 'longdesc',
+        answer: '3',
+    },
+    {
+        question: 'In HTML, which attribute is used to specify that an input field must be filled out?',
+        choice1: 'validate',
+        choice2: 'placeholder',
+        choice3: 'formvalidate',
+        choice4: 'required',
+        answer: '4',
+    },
+    {
+        question: 'Which HTML element is used to define the title of a document?',
+        choice1: '<meta>',
+        choice2: '<title>',
+        choice3: '<head>',
+        choice4: '<body>',
+        answer: '2',
+    }
 ];
 
 let currentIndex = 0;
@@ -45,6 +125,12 @@ function displayQuestion() {
     console.log(correct);
 }
 
+function shuffleQuestions(questions) {
+    for (let i = questions.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [questions[i], questions[j]] = [questions[j], questions[i]];
+    }
+}
 
 
 function choiceSelection() {
@@ -110,6 +196,7 @@ function startProgressBar() {
     }, 1);
 }
 function startQuiz() {
+    shuffleQuestions(questions);
     changeCorrectAndScore()
     displayQuestion()
     choiceSelection()
